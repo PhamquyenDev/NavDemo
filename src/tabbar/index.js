@@ -10,7 +10,21 @@ const Tab = createBottomTabNavigator();
 function Tabbar(){
     return(
         <NavigationContainer>
-            
+            <Tab.Navigator 
+                tabBarOptions={{
+                    labelStyle:{
+                        fontSize: 16
+                    },
+                    activeTintColor: 'red',
+                    inactiveTintColor: 'black'
+                }}>
+                <Tab.Screen name="Home" component={ListWorks} options={{
+                    tabBarLabel: "Home"
+                }} />
+                <Tab.Screen name="Profile" component={Login} options={{
+                    tabBarLabel: "Profile"
+                }}/>
+            </Tab.Navigator>
         </NavigationContainer>
     );
 }
